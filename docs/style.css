@@ -22,6 +22,10 @@ button {
   cursor: pointer;
 }
 
+path {
+  fill: currentColor;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -191,9 +195,9 @@ button {
   background-color: white;
   top: 50px;
   right: -48px;
-  -webkit-box-shadow: 3px 0px 0px 0px rgba(169, 169, 169, 1) inset;
-  -moz-box-shadow: 3px 0px 0px 0px rgba(169, 169, 169, 1) inset;
-  box-shadow: 3px 0px 0px 0px rgba(169, 169, 169, 1) inset;
+  border-width: 1px 1px 1px 0;
+  border-color: black;
+  border-style: solid;
 }
 
 .themeIcon {
@@ -205,31 +209,31 @@ button {
   margin-bottom: 5px;
 }
 
-/* 650px */
-@media only screen and (max-width: 650px) {
-  .left__block {
-    width: 205px;
-  }
-}
-
-/* 530px */
-@media only screen and (max-width: 650px) {
+@media (max-width: 650px) {
   .container {
     flex-direction: column;
     justify-content: normal;
   }
 
   .left__block {
-    width: 100%;
+    width: 100vw;
     border-right: none;
     border-bottom: 2px solid light-dark(black, white);
   }
 
   .right__block {
-    width: 100%;
+    width: 100vw;
+    margin-left: 0;
   }
+}
 
-  .title__block {
-    width: 100%;
+@media (max-width: 900px) {
+  .right__block {
+    position: static;
+  }
+  .mode {
+    right: 0;
+    border-radius: 0;
+    border: none;
   }
 }

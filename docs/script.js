@@ -63,17 +63,24 @@ function toggleDarkMode() {
 
   themeIcon.style.opacity = "0";
   setTimeout(() => {
-    themeIcon.src = isDark ? "img/dark.png" : "img/light.png";
+    themeIcon.src = isDark ? "img/light.png" : "img/dark.png";
     themeIcon.style.opacity = "1";
   }, 300);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
+
+  if (!savedTheme) {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.add("light");
+    document.documentElement.style.colorScheme = "light";
+    themeIcon.src = "img/dark.png";
+  }
   if (savedTheme === "dark") {
     document.documentElement.classList.add("dark");
     document.documentElement.style.colorScheme = "dark";
-    themeIcon.src = "img/dark.png";
+    themeIcon.src = "img/light.png";
   }
 });
 

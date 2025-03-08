@@ -36,7 +36,7 @@ path {
 
 .left__block {
   width: 258px;
-  border-right: 1px solid light-dark(black, white);
+  border-right: 1.5px solid light-dark(black, white);
 }
 
 .photo__name {
@@ -50,6 +50,7 @@ path {
 }
 
 .photo {
+  pointer-events: none;
   width: 194px;
   height: 194px;
   border-radius: 50%;
@@ -170,8 +171,12 @@ path {
   margin-bottom: 15px;
 }
 
+.text-block {
+  padding: 0 5px;
+}
+
 .text {
-  padding-right: 20px;
+  padding: 0 10px;
   font-size: 15px;
   text-align: justify;
   color: light-dark(#282828, #e6e6e6);
